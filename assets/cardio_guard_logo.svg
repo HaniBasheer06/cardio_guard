@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="430" height="76" viewBox="0 0 430 76" role="img" aria-label="CardioGuard">
+  <rect x="2" y="6" width="64" height="64" rx="18" fill="#FBE8EB"/>
+  <path d="M34 54s-19-11.7-19-25.1C15 16 31 13 34 24c3-11 19-8 19 4.9C53 42.3 34 54 34 54Z" fill="#C4455C"/>
+  <path d="M19 36h9l4-8 6 17 5-9h8" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.8"/>
+  <text x="82" y="39" fill="#172B3A" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="700" letter-spacing="-0.6">CardioGuard</text>
+  <text x="84" y="59" fill="#647789" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" letter-spacing="1.2">HEART HEALTH INSIGHTS</text>
+</svg>

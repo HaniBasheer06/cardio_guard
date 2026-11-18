@@ -1,0 +1,442 @@
+/* ==========================================================================
+   CardioGuard AI - Premium Healthcare Design System
+   Modern Medical SaaS Aesthetic with High-Contrast Light & Dark Modes
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+/* Base Root Tokens */
+:root {
+    --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    
+    /* Medical Brand Colors */
+    --brand-primary: #0284c7;
+    --brand-primary-hover: #0369a1;
+    --brand-gradient: linear-gradient(135deg, #0284c7 0%, #0369a1 50%, #075985 100%);
+    --brand-accent: #0ea5e9;
+    --brand-teal: #0d9488;
+    
+    /* High-Contrast Light Theme */
+    --light-bg: #f8fafc;
+    --light-surface: #ffffff;
+    --light-border: #e2e8f0;
+    --light-border-hover: #cbd5e1;
+    --light-text-heading: #0f172a;
+    --light-text-body: #334155;
+    --light-text-muted: #64748b;
+    --light-shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
+    --light-shadow-md: 0 4px 16px -2px rgba(15, 23, 42, 0.06), 0 2px 6px -1px rgba(15, 23, 42, 0.04);
+    --light-shadow-lg: 0 12px 32px -4px rgba(2, 132, 199, 0.12), 0 4px 12px -2px rgba(15, 23, 42, 0.05);
+
+    /* Clinical Vitals Tiers */
+    --risk-low-bg: #ecfdf5;
+    --risk-low-border: #10b981;
+    --risk-low-text: #065f46;
+    
+    --risk-mod-bg: #fffbeb;
+    --risk-mod-border: #f59e0b;
+    --risk-mod-text: #92400e;
+    
+    --risk-high-bg: #fff1f2;
+    --risk-high-border: #f43f5e;
+    --risk-high-text: #9f1239;
+}
+
+/* ==========================================================================
+   Global Layout & High-Contrast Typography
+   ========================================================================== */
+
+html, body, [class*="css"] {
+    font-family: var(--font-main);
+}
+
+.stApp {
+    background-color: var(--light-bg);
+    color: var(--light-text-body);
+}
+
+/* Force Crisp Readable Typography Across Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-main) !important;
+    color: var(--light-text-heading) !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.02em !important;
+}
+
+h1 { font-size: 2.1rem !important; margin-bottom: 0.5rem !important; }
+h2 { font-size: 1.6rem !important; margin-top: 1.5rem !important; margin-bottom: 0.5rem !important; }
+h3 { font-size: 1.25rem !important; margin-top: 1.25rem !important; margin-bottom: 0.4rem !important; }
+h4 { font-size: 1.05rem !important; font-weight: 600 !important; }
+
+p, span, li {
+    color: var(--light-text-body);
+    font-size: 0.96rem;
+    line-height: 1.6;
+}
+
+/* Streamlit Widget Labels: High Contrast & High Visibility */
+label[data-testid="stWidgetLabel"] p, label p {
+    color: var(--light-text-heading) !important;
+    font-weight: 600 !important;
+    font-size: 0.92rem !important;
+    margin-bottom: 0.25rem !important;
+}
+
+/* ==========================================================================
+   Header Banner - Modern Healthcare Glass & Mesh
+   ========================================================================== */
+
+.medical-header {
+    background: linear-gradient(135deg, #0369a1 0%, #0284c7 60%, #0ea5e9 100%);
+    padding: 2.5rem 2.8rem;
+    border-radius: 20px;
+    color: #ffffff !important;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 16px 36px -6px rgba(2, 132, 199, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.medical-header::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255,255,255,0.18) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.medical-header h1 {
+    color: #ffffff !important;
+    font-size: 2.4rem !important;
+    font-weight: 800 !important;
+    margin: 0.4rem 0 0.5rem 0 !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+}
+
+.medical-header p {
+    color: rgba(255, 255, 255, 0.95) !important;
+    font-size: 1.05rem !important;
+    font-weight: 400 !important;
+    margin: 0 !important;
+    max-width: 850px;
+    line-height: 1.55;
+}
+
+/* Header Badge Tag */
+.badge-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0.35rem 0.9rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    border-radius: 9999px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.medical-header .badge-tag {
+    background: rgba(255, 255, 255, 0.22);
+    color: #ffffff;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* ==========================================================================
+   Executive Metric Cards - Clean Elevated Architecture
+   ========================================================================== */
+
+.metric-card {
+    background-color: var(--light-surface);
+    border: 1px solid var(--light-border);
+    border-top: 4px solid var(--brand-primary);
+    border-radius: 14px;
+    padding: 1.4rem 1.6rem;
+    box-shadow: var(--light-shadow-md);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    height: 100%;
+    position: relative;
+}
+
+.metric-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--light-shadow-lg);
+    border-color: #bae6fd;
+    border-top-color: #0284c7;
+}
+
+.metric-card-title {
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--light-text-muted);
+    margin-bottom: 0.4rem;
+}
+
+.metric-card-value {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--brand-primary-hover);
+    line-height: 1.1;
+    margin: 0.2rem 0;
+    letter-spacing: -0.03em;
+}
+
+.metric-card-subtitle {
+    font-size: 0.84rem;
+    color: var(--light-text-body);
+    font-weight: 500;
+    margin-top: 0.4rem;
+}
+
+/* ==========================================================================
+   Info, Feature & Architecture Cards
+   ========================================================================== */
+
+.info-card {
+    background-color: var(--light-surface);
+    border: 1px solid var(--light-border);
+    border-left: 5px solid var(--brand-primary);
+    border-radius: 12px;
+    padding: 1.4rem 1.6rem;
+    margin-bottom: 1.25rem;
+    box-shadow: var(--light-shadow-sm);
+    transition: all 0.2s ease;
+}
+
+.info-card:hover {
+    border-color: #bae6fd;
+    border-left-color: var(--brand-primary);
+    box-shadow: var(--light-shadow-md);
+}
+
+.info-card h4 {
+    margin-top: 0;
+    color: var(--brand-primary) !important;
+    font-size: 1.08rem !important;
+}
+
+.info-card p {
+    font-size: 0.92rem;
+    color: var(--light-text-body);
+    margin-bottom: 0;
+}
+
+/* Safety Notice Box */
+.safety-notice {
+    background: #f0f9ff;
+    border: 1px solid #bae6fd;
+    border-left: 5px solid #0284c7;
+    border-radius: 12px;
+    padding: 1.3rem 1.6rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 2px 8px rgba(2, 132, 199, 0.06);
+}
+
+.safety-notice strong {
+    color: #0369a1;
+    display: block;
+    font-size: 0.98rem;
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+}
+
+.safety-notice p, .safety-notice span {
+    color: #0c4a6e !important;
+    font-size: 0.92rem;
+    line-height: 1.55;
+}
+
+/* ==========================================================================
+   Diagnostic Prediction Verdict Cards
+   ========================================================================== */
+
+.result-card-positive {
+    background: var(--risk-high-bg);
+    border: 1.5px solid var(--risk-high-border);
+    border-left: 7px solid #e11d48;
+    border-radius: 16px;
+    padding: 2rem 2.2rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 8px 24px rgba(225, 29, 72, 0.12);
+}
+
+.result-card-positive h2 {
+    color: #be123c !important;
+    font-size: 1.6rem !important;
+    font-weight: 800 !important;
+    margin: 0 !important;
+}
+
+.result-card-positive p {
+    color: #881337 !important;
+    font-size: 1.05rem;
+    margin-top: 0.75rem;
+}
+
+.result-card-negative {
+    background: var(--risk-low-bg);
+    border: 1.5px solid var(--risk-low-border);
+    border-left: 7px solid #10b981;
+    border-radius: 16px;
+    padding: 2rem 2.2rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 8px 24px rgba(16, 185, 129, 0.12);
+}
+
+.result-card-negative h2 {
+    color: #065f46 !important;
+    font-size: 1.6rem !important;
+    font-weight: 800 !important;
+    margin: 0 !important;
+}
+
+.result-card-negative p {
+    color: #064e3b !important;
+    font-size: 1.05rem;
+    margin-top: 0.75rem;
+}
+
+/* Risk Pill Badges */
+.badge-low {
+    background-color: #d1fae5;
+    color: #065f46;
+    border: 1px solid #a7f3d0;
+}
+
+.badge-mod {
+    background-color: #fef3c7;
+    color: #92400e;
+    border: 1px solid #fde68a;
+}
+
+.badge-high {
+    background-color: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+}
+
+/* ==========================================================================
+   Streamlit Input Form Controls & Widgets Styling
+   ========================================================================== */
+
+/* Modernized Input Containers */
+div[data-baseweb="input"], div[data-baseweb="select"] {
+    background-color: #ffffff !important;
+    border-radius: 10px !important;
+    border-color: #cbd5e1 !important;
+    transition: all 0.2s ease !important;
+}
+
+div[data-baseweb="input"]:focus-within, div[data-baseweb="select"]:focus-within {
+    border-color: #0284c7 !important;
+    box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.18) !important;
+}
+
+/* Number inputs and text fields */
+input {
+    color: #0f172a !important;
+    font-weight: 600 !important;
+}
+
+/* Streamlit Tabs */
+div[data-baseweb="tab-list"] {
+    background-color: #f1f5f9;
+    border-radius: 12px;
+    padding: 5px;
+    gap: 4px;
+    margin-bottom: 1.5rem;
+}
+
+button[data-baseweb="tab"] {
+    border-radius: 9px !important;
+    font-weight: 600 !important;
+    color: #475569 !important;
+    padding: 0.6rem 1.25rem !important;
+    border: none !important;
+    transition: all 0.2s ease !important;
+}
+
+button[data-baseweb="tab"][aria-selected="true"] {
+    background-color: #ffffff !important;
+    color: #0284c7 !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Form Submit Buttons */
+div.stButton > button:first-child {
+    background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%) !important;
+    color: #ffffff !important;
+    border: none !important;
+    padding: 0.75rem 1.8rem !important;
+    font-weight: 700 !important;
+    font-size: 1rem !important;
+    border-radius: 10px !important;
+    letter-spacing: -0.01em !important;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35) !important;
+    cursor: pointer !important;
+}
+
+div.stButton > button:first-child:hover {
+    background: linear-gradient(135deg, #0369a1 0%, #075985 100%) !important;
+    box-shadow: 0 8px 24px rgba(2, 132, 199, 0.45) !important;
+    transform: translateY(-2px) !important;
+    color: #ffffff !important;
+}
+
+/* Download Buttons */
+div.stDownloadButton > button {
+    background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%) !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    border-radius: 10px !important;
+    border: none !important;
+    padding: 0.75rem 1.8rem !important;
+    box-shadow: 0 4px 14px rgba(13, 148, 136, 0.3) !important;
+    transition: all 0.2s ease !important;
+}
+
+div.stDownloadButton > button:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 24px rgba(13, 148, 136, 0.4) !important;
+    color: #ffffff !important;
+}
+
+/* Expander Styling */
+div[data-testid="stExpander"] {
+    background-color: #ffffff;
+    border: 1px solid var(--light-border);
+    border-radius: 12px;
+    box-shadow: var(--light-shadow-sm);
+    margin-bottom: 1rem;
+}
+
+/* Sidebar Styling */
+[data-testid="stSidebar"] {
+    background-color: #ffffff !important;
+    border-right: 1px solid var(--light-border) !important;
+}
+
+[data-testid="stSidebarNav"] {
+    padding-top: 1rem;
+}
+
+/* Dataframe & Tables Styling */
+div[data-testid="stDataFrame"] {
+    border: 1px solid var(--light-border);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--light-shadow-sm);
+}
+
+/* Progress bar */
+div[data-testid="stProgress"] > div > div > div {
+    background: linear-gradient(90deg, #0284c7 0%, #0ea5e9 100%);
+    border-radius: 9999px;
+}

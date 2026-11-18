@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "timestamp": "2026-11-18 09:51:46",
+    "model": "Random Forest",
+    "age": 55,
+    "sex": "Male",
+    "prediction": "No Heart Disease Detected",
+    "probability": 14.7,
+    "risk_level": "Low Risk",
+    "inputs": {
+      "age": 55,
+      "sex": 1,
+      "cp": 1,
+      "trestbps": 130,
+      "chol": 240,
+      "fbs": 0,
+      "restecg": 0,
+      "thalach": 150,
+      "exang": 0,
+      "oldpeak": 1.0,
+      "slope": 1,
+      "ca": 0,
+      "thal": 3
+    }
+  }
+]
